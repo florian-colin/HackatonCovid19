@@ -12,3 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 Test test 
 
 Gabin, essaye de rajouter du texte en dessous de cette phrase et de supprimer "Test test" au dessus pour voir comment ça marche pour les Pull request !
+
+
+ca dit quoi la 
