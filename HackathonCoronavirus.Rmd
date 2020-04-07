@@ -36,7 +36,6 @@ library(kableExtra)
 
 ```{r}
 coronavirus <- utils::read.csv("https://raw.githubusercontent.com/RamiKrispin/coronavirus-csv/master/coronavirus_dataset.csv")## URL permettant de générer la data
-coronavirus
 ```
 
 ```{r}
@@ -45,7 +44,6 @@ summary_df <- coronavirus %>% group_by(Country.Region, type) %>%
   arrange(-total_cases)
 
 summary_df %>% head(20)
-summary_df
 ```
 
 ```{r include=FALSE}
@@ -65,7 +63,6 @@ coronavirus %>%
 
 ```{r}
 CoronavirusFR <- filter(coronavirus, Country.Region == "France" & Province.State == "") ## j'ai mis Province.State "", comme ça on a pas l'OutreMer
-CoronavirusFR
 ```
 
 ```{r}
