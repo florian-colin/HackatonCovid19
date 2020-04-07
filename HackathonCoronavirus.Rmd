@@ -13,5 +13,11 @@ Test test
 
 Gabin, essaye de rajouter du texte en dessous de cette phrase et de supprimer "Test test" au dessus pour voir comment ça marche pour les Pull request !
 
+<<<<<<< HEAD
 
 ca dit quoi la 
+=======
+Cette ligne est une ligne ajoutée le 07/04 à 11h pour test pull.
+>>>>>>> ba02fe12b344d1e11cf446dc9c3c24d5e9df7e0e
+
+je rajoute quelque chose pour voir si ca marche
