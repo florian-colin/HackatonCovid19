@@ -32,6 +32,8 @@ library(ggplot2)
 library(tidyr)
 library(plotly)
 library(kableExtra)
+library(readr)
+library(readxl)
 ```
 
 ```{r}
@@ -130,13 +132,6 @@ ggplot(CoronavirusUK) +
   labs(y = "Nombre de cas", title = "Coronavirus au Royaume-Uni", caption = "Source : Rami Krispin dataset coronavirus") + 
   ggthemes::theme_stata()
 ```
-
-
-
-
-
-
-
 
 ```{r}
 CombineCountries <- filter(coronavirus, Country.Region == "France" | Country.Region == "Spain" | Country.Region == "Germany" | Country.Region == "Italy")
@@ -273,3 +268,22 @@ CombineCumul3 <- CombineCumul2 + theme(axis.title.y = element_blank())
 CombineCumul3 <- ggplotly(CombineCumul3)
 CombineCumul3 ## graph interactif sur les effectifs cumulés
 ```
+
+# Évolution du CAC 40 
+```{r}
+CAC40 <- read_xlsx("PX1-3.xlsx")
+
+
+ggplot(CAC) +
+ aes(x = date, y = cloture) +
+ geom_line(size = 0.78) +
+ scale_color_hue() +
+ labs(x = "Date", y = "Cours de cloture", title = "Évolution de l'indice boursier CAC 40", subtitle = "Depuis janvier 2020") +
+ ggthemes::theme_solarized()
+
+```
+
+
+
+
+
