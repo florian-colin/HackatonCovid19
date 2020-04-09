@@ -273,8 +273,9 @@ CombineCumul3 ## graph interactif sur les effectifs cumulés
 ```{r}
 CAC40 <- read_xlsx("PX1-3.xlsx")
 
+CAC40$date <- as.Date(CAC40$date)
 
-ggplot(CAC) +
+ggplot(CAC40) +
  aes(x = date, y = cloture) +
  geom_line(size = 0.78) +
  scale_color_hue() +
