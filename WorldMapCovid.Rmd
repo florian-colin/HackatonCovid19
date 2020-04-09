@@ -1,0 +1,40 @@
+---
+title: "World Map Covid-19"
+author: "Valentin Henriot"
+date: "09/04/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Document RMD pour générer la carte du monde avec l'évolution jour par jour avec les différents cas (décés, rétablis, confirmés).
+Essayer de faire une carte avec une timeline (leaftime).
+
+```{r}
+library(dplyr) 
+library(tidyr)
+library(leaflet)
+library(leaflet.extras)
+library(leaftime)
+```
+
+```{r}
+CoronavirusWorld <- utils::read.csv("https://raw.githubusercontent.com/RamiKrispin/coronavirus-csv/master/coronavirus_dataset.csv")
+```
+
+```{r}
+View(CoronavirusWorld)
+```
+
+```{r}
+CoronavirusWorld$name <- ifelse(is.na(CoronavirusWorld$Province.State) == TRUE, 
+                                paste0(CoronavirusWorld$Country.Region), paste0(CoronavirusWorld$Province.State))
+```
+
+```{r}
+CoronavirusWorld$date <- as.Date(CoronavirusWorld$date)
+```
+
+
