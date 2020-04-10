@@ -37,4 +37,7 @@ CoronavirusWorld$name <- ifelse(is.na(CoronavirusWorld$Province.State) == TRUE,
 CoronavirusWorld$date <- as.Date(CoronavirusWorld$date)
 ```
 
+```{r}
+CoronavirusWorld$category <- ifelse(CoronavirusWorld$cases >= -1 & CoronavirusWorld$cases <= 0, 0, ifelse(CoronavirusWorld$cases >=1 & CoronavirusWorld$cases <= 100, 1, ifelse(CoronavirusWorld$cases >= 101 & CoronavirusWorld$cases <= 1000, 2, ifelse(CoronavirusWorld$cases >= 1001 & CoronavirusWorld$cases <= 3000, 4, ifelse(CoronavirusWorld$cases >= 3001 & CoronavirusWorld$cases <= 5000, 5, ifelse(CoronavirusWorld$cases >= 5001 & CoronavirusWorld$cases <= 10000, 8))))))
+```
 
